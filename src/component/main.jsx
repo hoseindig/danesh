@@ -5,6 +5,7 @@ import "./main-box.scss";
 import { Card, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 
 import CenterMainPage from "./centerMainPage";
+import Experience from "./experience";
 class Main extends Component {
   state = {};
   render() {
@@ -52,14 +53,11 @@ class Main extends Component {
           </Col>
           <Col md={9}>
             <Switch>
+              <Route path="/experience" component={Experience} />
+
               <Route
                 path="/"
-                render={(props) => (
-                  <CenterMainPage
-                    {...props}
-                    cards={cards} 
-                  />
-                )}
+                render={(props) => <CenterMainPage {...props} cards={cards} />}
               />
             </Switch>
 

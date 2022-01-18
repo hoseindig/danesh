@@ -120,27 +120,48 @@ body {
   direction: rtl;
 }
 
-.card-news{
+.card-news {
   text-align: right;
-  .list-group-item{
-    font-size: .8em;
+  .list-group-item {
+    font-size: 0.8em;
   }
-  .fa-bookmark-o{
+  .fa-bookmark-o {
     float: left;
   }
 }
 
-.child-menu{
-  .list-group-item{
+.child-menu {
+  .list-group-item {
     cursor: pointer;
-    font-size: .7em;
+    font-size: 0.7em;
     text-align: right;
-    i{
+    i {
       font-size: 1.4em;
       padding: 0 10px;
     }
-    &:hover{
+    &:hover {
       font-weight: bold;
     }
+  }
+}
+
+.experience {
+  padding: 15px;
+  box-shadow: 0 0 13px 1px #b7bdc3;
+  background-color: white;
+  border: 1px solid rgb(209, 207, 207);
+  .header {
+    div i {
+      padding: 10px;
+    }
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+  div .btn {
+    border-radius: 30px;
+    font-size: 0.7em;
+    color: white;
   }
 }
