@@ -119,3 +119,13 @@
 body {
   direction: rtl;
 }
+
+.card-news{
+  text-align: right;
+  .list-group-item{
+    font-size: .8em;
+  }
+  .fa-bookmark-o{
+    float: left;
+  }
+}

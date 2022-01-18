@@ -14,3 +14,26 @@
     font-size: 0.7em;
   }
 }
+
+.card-box {
+  cursor: pointer;
+  .card {
+    border: red;
+  }
+}
+.orang {
+  border-bottom-style: solid;
+  border-bottom-color: rgb(236, 157, 128);
+}
+.orang {
+  border-bottom-style: solid;
+  border-bottom-color: rgb(246, 66, 0);
+}
+.green {
+  border-bottom-style: solid;
+  border-bottom-color: rgb(48, 168, 11);
+}
+.blue {
+  border-bottom-style: solid;
+  border-bottom-color: rgb(11, 21, 168);
+}

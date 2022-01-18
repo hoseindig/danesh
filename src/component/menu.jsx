@@ -21,20 +21,13 @@ export class Example1 extends Component {
         <Accordion>
           {menuItem.map((item) => {
             return (
-              <Accordion.Item eventKey={item.id}>
+              <Accordion.Item eventKey={item.id} key={item.id}>
                 <Accordion.Header>{item.headerText}</Accordion.Header>
                 <Accordion.Body>Lorem ipsum dolor sit amet,</Accordion.Body>
               </Accordion.Item>
             );
           })}
-          {/*<Accordion.Item eventKey="0">
-            <Accordion.Header>خانه</Accordion.Header>
-            <Accordion.Body>Lorem ipsum dolor sit amet,</Accordion.Body>
-          </Accordion.Item>
-         <Accordion.Item eventKey="1">
-            <Accordion.Header>Accordion Item #2</Accordion.Header>
-            <Accordion.Body>Lorem ipsum dolor sit amet,</Accordion.Body>
-          </Accordion.Item> */}
+       
         </Accordion>
       </div>
     );
