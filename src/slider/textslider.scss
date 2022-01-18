@@ -1,0 +1,90 @@
+$itemIn: 70px;
+$itemStop: 80px;
+$itemOut: 110px;
+$animateName:anim-1;
+.item-1,
+.item-2,
+.item-3,
+.item-4 {
+  color: white;
+
+  position: absolute;
+  display: block;
+  /* top: 15em; */
+
+  width: 100%;
+
+  font-size: 14px;
+
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.item-1 {
+  animation-name: anim-1;
+}
+
+.item-2 {
+  animation-name: anim-2;
+}
+
+.item-3 {
+  animation-name: anim-3;
+}
+.item-4 {
+  animation-name: anim-1;
+}
+
+@keyframes anim-1 {
+  0%,
+  8.3% {
+    top: $itemIn;
+    opacity: 0;
+  }
+  8.3%,
+  25% {
+    top: $itemStop;
+    opacity: 1;
+  }
+  33.33%,
+  100% {
+    top: $itemOut;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-2 {
+  0%,
+  33.33% {
+    top: $itemIn;
+    opacity: 0;
+  }
+  41.63%,
+  58.29% {
+    top: $itemStop;
+    opacity: 1;
+  }
+  66.66%,
+  100% {
+    top: $itemOut;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-3 {
+  0%,
+  66.66% {
+    top: $itemIn;
+    opacity: 0;
+  }
+  74.96%,
+  91.62% {
+    top: $itemStop;
+    opacity: 1;
+  }
+  100% {
+    top: $itemOut;
+    opacity: 0;
+  }
+}
