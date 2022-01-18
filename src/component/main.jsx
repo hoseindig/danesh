@@ -3,8 +3,7 @@ import RightMenu from "./rightMenu";
 import "./main-box.scss";
 import { Card, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 
-import CardsMAinPage from "./cardsMainPage";
-import CardNewsMainPAge from "./cardNewMainPage";
+import CenterMainPage from "./centerMainPage";
 class Main extends Component {
   state = {};
   render() {
@@ -51,27 +50,7 @@ class Main extends Component {
             </div>
           </Col>
           <Col md={9}>
-            <CardsMAinPage cards={cards} />
-            <Row>
-              <Col md={8}>
-                <div className="m-3"></div>
-                <Accordion>
-                  <Accordion.Item eventKey={0} key={0}>
-                    <Accordion.Header>
-                      <i className="fa fa-paper-plane" aria-hidden="true"></i>{" "}
-                      ارسال پست
-                    </Accordion.Header>
-                    <Accordion.Body>Lorem ipsum dolor sit amet,</Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
-              </Col>
-
-              <Col md={4}>
-                <div className="m-3 card-box ">
-                  <CardNewsMainPAge />
-                </div>
-              </Col>
-            </Row>
+            <CenterMainPage cards={cards} />
           </Col>
         </Row>
       </div>
