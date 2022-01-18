@@ -55,9 +55,9 @@ const CardNewsMainPAge = () => {
             {news.map((n) => {
               return (
                 <ListGroup.Item as="li" key={n.id}>
-                  <i className="fa fa-circle" style={{ fontSize: "11px" }}></i>{" "}
+                  <i className="fa fa-circle" style={{ fontSize: "8px" }}></i>{" "}
                   {n.text}
-                  <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                  <i className="fa fa-bookmark-o" aria-hidden="true"></i>
                 </ListGroup.Item>
               );
             })}
