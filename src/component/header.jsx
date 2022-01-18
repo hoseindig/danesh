@@ -3,6 +3,8 @@ import logo from "../logo.png";
 import SearchInput from "./search";
 import HeaderIcon from "./headerIcon";
 import TextSlider from "./textSlider";
+
+import { Row, Col } from "react-bootstrap";
 // import logo from './logo.svg';
 
 class Header extends Component {
@@ -10,22 +12,26 @@ class Header extends Component {
   render() {
     return (
       <div className="top-header">
-        <div className="row">
-          <div className="col-md-3 header-box-r">
-            <img width={90} src={logo} alt="" />
-            <span>وزارت بهداشت درمان و آموزش پزشکی</span>
-          </div>
-          <div className="col-md-9 header-box-l">
-            <div className="header-box-l-top">
-              <SearchInput />
-              <HeaderIcon />
+        <Row>
+          <Col md={3}>
+            <div className="header-box-r">
+              <img width={90} src={logo} alt="" />
+              <span>وزارت بهداشت درمان و آموزش پزشکی</span>
             </div>
+          </Col>
+          <Col md={9}>
+            <div className="  header-box-l">
+              <div className="header-box-l-top">
+                <SearchInput />
+                <HeaderIcon />
+              </div>
 
-            <div className="header-box-l-butttom">
-              <TextSlider />
+              <div className="header-box-l-butttom">
+                <TextSlider />
+              </div>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     );
   }

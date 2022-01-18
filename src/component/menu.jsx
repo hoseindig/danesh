@@ -1,62 +1,44 @@
-const Menu = () => {
-  return (
-    <div>
-      <p>
-        <a
-          class="btn btn-primary"
-          data-toggle="collapse"
-          href="#multiCollapseExample1"
-          role="button"
-          aria-expanded="false"
-          aria-controls="multiCollapseExample1"
-        >
-          Toggle first element
-        </a>
-        <button
-          class="btn btn-primary"
-          type="button"
-          data-toggle="collapse"
-          data-target="#multiCollapseExample2"
-          aria-expanded="false"
-          aria-controls="multiCollapseExample2"
-        >
-          Toggle second element
-        </button>
-        <button
-          class="btn btn-primary"
-          type="button"
-          data-toggle="collapse"
-          data-target=".multi-collapse"
-          aria-expanded="false"
-          aria-controls="multiCollapseExample1 multiCollapseExample2"
-        >
-          Toggle both elements
-        </button>
-      </p>
-      <div class="row">
-        <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample1">
-            <div class="card card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt sapiente
-              ea proident.
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample2">
-            <div class="card card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt sapiente
-              ea proident.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import React, { Component } from "react";
+import { Accordion } from "react-bootstrap";
+import './menu.scss'
+// import "bootstrap/dist/css/bootstrap.min.css";
 
-export default Menu;
+export class Example1 extends Component {
+  render() {
+    const menuItem = [
+      { id: 0, headerText: "خانه" },
+      { id: 1, headerText: "ثبت" },
+      { id: 2, headerText: "جستجو" },
+      { id: 3, headerText: "نقشه دانش" },
+      { id: 4, headerText: "آیتم های شخصی" },
+      { id: 5, headerText: "ارزیابی ئ پاسخ" },
+      { id: 6, headerText: "انجمن گفتگوی سوال" },
+      { id: 7, headerText: "ارتباط با دیگران" },
+      { id: 8, headerText: "گزارشات" },
+    ];
+    return (
+      <div>
+        <Accordion>
+          {menuItem.map((item) => {
+            return (
+              <Accordion.Item eventKey={item.id}>
+                <Accordion.Header>{item.headerText}</Accordion.Header>
+                <Accordion.Body>Lorem ipsum dolor sit amet,</Accordion.Body>
+              </Accordion.Item>
+            );
+          })}
+          {/*<Accordion.Item eventKey="0">
+            <Accordion.Header>خانه</Accordion.Header>
+            <Accordion.Body>Lorem ipsum dolor sit amet,</Accordion.Body>
+          </Accordion.Item>
+         <Accordion.Item eventKey="1">
+            <Accordion.Header>Accordion Item #2</Accordion.Header>
+            <Accordion.Body>Lorem ipsum dolor sit amet,</Accordion.Body>
+          </Accordion.Item> */}
+        </Accordion>
+      </div>
+    );
+  }
+}
+
+export default Example1;

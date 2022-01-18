@@ -1,0 +1,11 @@
+.accordion-button:not(.collapsed) {
+  color: #ffffff !important;
+  background-color: #32434d !important;
+}
+.accordion-button{
+    font-size: .35em !important;
+}
+.accordion-button::after {
+  position: absolute;
+  left: 10px;
+}
