@@ -129,3 +129,18 @@ body {
     float: left;
   }
 }
+
+.child-menu{
+  .list-group-item{
+    cursor: pointer;
+    font-size: .7em;
+    text-align: right;
+    i{
+      font-size: 1.4em;
+      padding: 0 10px;
+    }
+    &:hover{
+      font-weight: bold;
+    }
+  }
+}

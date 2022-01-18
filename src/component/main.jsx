@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 import RightMenu from "./rightMenu";
 import "./main-box.scss";
 import { Card, Row, Col, Accordion, ListGroup } from "react-bootstrap";
@@ -50,7 +51,19 @@ class Main extends Component {
             </div>
           </Col>
           <Col md={9}>
-            <CenterMainPage cards={cards} />
+            <Switch>
+              <Route
+                path="/"
+                render={(props) => (
+                  <CenterMainPage
+                    {...props}
+                    cards={cards} 
+                  />
+                )}
+              />
+            </Switch>
+
+            {/* <CenterMainPage cards={cards} /> */}
           </Col>
         </Row>
       </div>
