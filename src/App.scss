@@ -1,7 +1,7 @@
 @font-face {
   font-family: IranianSans;
-  src: url(font/IranianSans.ttf);
-  // src: url(font/IRANSansMedium.ttf);
+  // src: url(font/IranianSans.ttf);
+  src: url(font/IRANSansMedium.ttf);
 }
 * {
   font-family: IranianSans;
@@ -58,6 +58,9 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    img {
+      filter: drop-shadow(0px 0px 0px black);
+    }
   }
   .header-box-l {
     background-color: #4458ae;
