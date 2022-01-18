@@ -1,5 +1,9 @@
 import { Button, Alert, Form } from "react-bootstrap";
 import Input from "./base/input";
+// import MyEditor from "./myEditor";
+// import KendoEditor from "./kendoEditor/index";3
+// import Tiptap from "./kendoEditor/tiptapTextEditor";
+import TextEditor from "./tinymceTextEditor/index";
 const Experience = () => {
   return (
     <div className="experience">
@@ -22,7 +26,8 @@ const Experience = () => {
         موارد ستاره دار اجباری میباشد
       </Alert>
 
-      <Input label="عنوان تجربه" require={true}  name={"title"}/>
+      <Input label="عنوان تجربه" require={true} name={"title"} />
+      <TextEditor />
     </div>
   );
 };

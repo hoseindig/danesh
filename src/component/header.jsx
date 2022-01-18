@@ -27,7 +27,7 @@ class Header extends Component {
               </div>
 
               <div className="header-box-l-butttom">
-                <TextSlider />
+                {/* <TextSlider /> */}
               </div>
             </div>
           </Col>
