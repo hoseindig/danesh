@@ -164,4 +164,20 @@ body {
     font-size: 0.7em;
     color: white;
   }
+
+  .alert {
+    text-align: right;
+    font-size: 0.7em;
+
+    i {
+      padding: 10px;
+    }
+  }
+  .form-label {
+    font-size: 0.7em;
+    float: right;
+    .require {
+      color: red;
+    }
+  }
 }
