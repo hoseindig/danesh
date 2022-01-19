@@ -40,7 +40,18 @@ const Input = ({
         ) : (
           ""
         )}
-        {!type ? (
+
+        {onlyLable ? (
+          <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
+            <Form.Label>
+              {label} {require ? <span className="require">*</span> : ""}
+            </Form.Label>
+          </Form.Group>
+        ) : (
+          ""
+        )}
+
+        {!type && !onlyLable ? (
           <Form.Group className={cssclass} controlId="formBasicEmail">
             {noLabel ? (
               ""
