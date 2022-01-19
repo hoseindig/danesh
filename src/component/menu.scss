@@ -2,12 +2,24 @@
   color: #ffffff !important;
   background-color: #32434d !important;
 }
-.accordion-button{
-    font-size: .35em !important;
+.accordion-button {
+  font-size: 0.35em !important;
 }
 .accordion-button::after {
   position: absolute;
   left: 10px;
 }
 
-
+.list-group-item {
+  text-align: right;
+  font-size: .8em;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+}

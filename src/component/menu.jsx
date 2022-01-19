@@ -8,7 +8,7 @@ import ChildMenu from "./childMenu";
 export class Example1 extends Component {
   render() {
     const menuItem = [
-      { id: 0, headerText: "خانه" },
+      // { id: 0, headerText: "خانه" },
       {
         id: 1,
         headerText: "ثبت",
@@ -41,6 +41,10 @@ export class Example1 extends Component {
     ];
     return (
       <div>
+        <ListGroup.Item>
+          <Link to="/">خانه</Link>
+        </ListGroup.Item>
+
         <Accordion>
           {menuItem.map((item) => {
             return (
