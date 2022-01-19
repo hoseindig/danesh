@@ -1,6 +1,5 @@
-import React, { Component, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-
+import { Button, Modal, Table, Row, Col } from "react-bootstrap";
+import SearchInput from "../search";
 const ModalDanshkar = ({ show, toggleModal }) => {
   console.log("showModal", show);
   return (
@@ -10,33 +9,68 @@ const ModalDanshkar = ({ show, toggleModal }) => {
         onHide={toggleModal}
         backdrop="static"
         keyboard={false}
+        size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title></Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
+          <div>
+            <Row>
+              <Col md={4}>
+                <SearchInput label="جستجوی نام" />
+              </Col>
+              <Col md={4}>
+                <SearchInput  label="جستجوی نام خانوادگی"/>
+              </Col>
+              <Col md={4}>
+                <SearchInput  label="جستجوی کد پرسنلی"/>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td colSpan={2}>Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </Col>
+            </Row>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={toggleModal}>
-            Close
+            خروج
           </Button>
-          <Button variant="primary">Understood</Button>
+          <Button variant="primary">تایید</Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 };
-
-// const ModalDanshkar = ({ show }) => {
-//   const [setShow] = useState(false);
-
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
-//   return (
-
-//   );
-// };
 
 export default ModalDanshkar;
