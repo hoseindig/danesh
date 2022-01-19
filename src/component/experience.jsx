@@ -5,17 +5,19 @@ import Input from "./base/input";
 // import Tiptap from "./kendoEditor/tiptapTextEditor";
 import TextEditor from "./tinymceTextEditor/index";
 import Treeview from "./treeview";
-import Hedaer from "./header-box";
+import Header from "./header-box";
+import AlertBox from "./alertBox";
 const Experience = () => {
   return (
     <div className="experience">
-      <Hedaer title={"ثبت تجربه"} icon="fa fa-lightbulb-o" />
+      <Header title={"ثبت تجربه"} icon="fa fa-lightbulb-o" />
       <hr />
 
-      <Alert variant="info">
-        <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
-        موارد ستاره دار اجباری میباشد
-      </Alert>
+      <AlertBox
+        type="info"
+        text="موارد ستاره دار اجباری میباشد"
+        icon="fa fa-exclamation-triangle"
+      />
 
       <Input label="عنوان تجربه" require={true} name={"title"} />
 

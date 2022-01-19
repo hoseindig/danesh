@@ -1,6 +1,6 @@
 import { Button, Alert, Form, Row, Col } from "react-bootstrap";
 
-const Hedaer = ({ title, Buttons,icon }) => {
+const Header = ({ title, Buttons,icon }) => {
   return (
     <div className="header">
       <div>
@@ -19,4 +19,4 @@ const Hedaer = ({ title, Buttons,icon }) => {
   );
 };
 
-export default Hedaer;
+export default Header;
