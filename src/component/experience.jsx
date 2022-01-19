@@ -3,7 +3,7 @@ import SpecialItemBox from "./specialItemBox";
 const Experience = () => {
   return (
     <div>
-      <ExperienceBox />
+      {/* <ExperienceBox /> */}
       <SpecialItemBox />
     </div>
   );

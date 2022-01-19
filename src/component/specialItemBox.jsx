@@ -4,10 +4,15 @@ import Input from "./base/input";
 // import Treeview from "./treeview";
 import Header from "./header-box";
 import AlertBox from "./alertBox";
-
 import React, { Component } from "react";
+import ModalDanshkar from "./base/modalDanshkar";
+import Text from "./base/text";
 class SpecialItemBox extends Component {
-  state = { isSpecialKnowledge: false, isGroupknowledge: false };
+  state = {
+    isSpecialKnowledge: false,
+    isGroupknowledge: false,
+    showModalDanshkar: false,
+  };
   // let isSpecialKnowledge = false;
   specialKnowledge = (p) => {
     let isSpecialKnowledge = this.state.isSpecialKnowledge;
@@ -19,11 +24,21 @@ class SpecialItemBox extends Component {
     isGroupknowledge = !isGroupknowledge;
     this.setState({ isGroupknowledge });
   };
-
+  showDanshModal = (p) => {
+    let showModalDanshkar = this.state.showModalDanshkar;
+    showModalDanshkar = !showModalDanshkar;
+    this.setState({ showModalDanshkar });
+    console.log("showModalDanshkar", showModalDanshkar);
+  };
   render() {
-    const { isSpecialKnowledge, isGroupknowledge } = this.state;
+    const { isSpecialKnowledge, isGroupknowledge, showModalDanshkar } =
+      this.state;
     return (
       <div className="experience">
+        <ModalDanshkar
+          show={showModalDanshkar}
+          toggleModal={this.showDanshModal}
+        />
         <Header title={"موارد خاص"} icon="fa fa-file-text-o" />
         <hr />
 
@@ -68,7 +83,13 @@ class SpecialItemBox extends Component {
             </Row>
             <Row className="new-nowledge">
               <Col md={3}>
-                <Input label=" دانشکار" require={true} name={"title"} />
+                <Input
+                  label=" دانشکار"
+                  require={true}
+                  name={"title"}
+                  optionButton={{ name: "..." }}
+                  optionClick={this.showDanshModal}
+                />
               </Col>
               <Col md={3}>
                 <Input label=" درصد مشارکت" require={true} name={"title"} />

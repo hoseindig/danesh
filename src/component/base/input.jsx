@@ -16,9 +16,11 @@ const Input = ({
   button,
   type,
   onClick,
+  optionButton,
+  optionClick
 }) => {
   const cssclass = !onlyLable ? "mb-3" : "";
-  const ifButtonExistColIs = button ? 10 : 12;
+  const ifButtonExistColIs = button ? 10 : optionButton ? 8 : 12;
   return (
     <Row className="my-input">
       <Col md={ifButtonExistColIs}>
@@ -89,6 +91,16 @@ const Input = ({
               {button.name}
             </Button>
           </OverlayTrigger>
+        ) : (
+          ""
+        )}
+      </Col>
+
+      <Col md={2}>
+        {optionButton ? (
+          <Button variant="light" className="mb-2" onClick={optionClick}>
+            {optionButton.name}
+          </Button>
         ) : (
           ""
         )}
