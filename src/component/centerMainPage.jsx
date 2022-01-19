@@ -3,7 +3,7 @@ import { Card, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 import CardsMAinPage from "./cardsMainPage";
 import CardNewsMainPAge from "./cardNewMainPage";
 import SendPostMainPage from "./sendPostMainPage";
-
+import VerticalLinearStepper from "./steper";
 const CenterMainPage = ({cards}) => {
   return (
     <div>
@@ -12,6 +12,9 @@ const CenterMainPage = ({cards}) => {
         <Col md={8}>
           <div className="mt-3">
             <SendPostMainPage />
+          </div>
+          <div className="mt-3">
+            <VerticalLinearStepper />
           </div>
         </Col>
 
