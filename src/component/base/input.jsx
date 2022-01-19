@@ -7,15 +7,35 @@ import {
   Tooltip,
 } from "react-bootstrap";
 import "./style.scss";
-const Input = ({ name, label, require, onlyLable, noLabel, button, type }) => {
+const Input = ({
+  name,
+  label,
+  require,
+  onlyLable,
+  noLabel,
+  button,
+  type,
+  onClick,
+}) => {
   const cssclass = !onlyLable ? "mb-3" : "";
   const ifButtonExistColIs = button ? 10 : 12;
   return (
     <Row className="my-input">
       <Col md={ifButtonExistColIs}>
+        {type && type === "textarea" ? (
+          <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
+            <Form.Label>
+              {label} {require ? <span className="require">*</span> : ""}
+            </Form.Label>
+            <Form.Control type="textarea" name={name} />
+          </Form.Group>
+        ) : (
+          ""
+        )}
+
         {type && type === "checkbox" ? (
           <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label={label} />
+            <Form.Check onClick={onClick} type="checkbox" label={label} />
           </Form.Group>
         ) : (
           ""

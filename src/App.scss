@@ -5,6 +5,7 @@
 }
 * {
   font-family: IranianSans;
+  font-size: 1em;
 }
 .App {
   text-align: center;
@@ -181,12 +182,26 @@ body {
       color: red;
     }
   }
-  .attachFile{
+  .attachFile {
     float: right;
+  }
+  .footer-box {
+    padding: 10px 0;
+    background-color: #f0f3ee;
+    text-align: left;
   }
 }
 
-.form-control{
-  // font-size: 1em!important;
+.new-nowledge {
+  display: flex;
+  align-items: center;
 }
- 
+
+.table-striped {
+  thead,
+  tr,
+  th {
+    font-size: 0.8em;
+  }
+  
+}
