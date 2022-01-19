@@ -1,25 +1,15 @@
-import { Button, Alert, Form } from "react-bootstrap";
+import { Button, Alert, Form, Row, Col } from "react-bootstrap";
 import Input from "./base/input";
 // import MyEditor from "./myEditor";
 // import KendoEditor from "./kendoEditor/index";3
 // import Tiptap from "./kendoEditor/tiptapTextEditor";
 import TextEditor from "./tinymceTextEditor/index";
 import Treeview from "./treeview";
+import Hedaer from "./header-box";
 const Experience = () => {
   return (
     <div className="experience">
-      <div className="header">
-        <div>
-          <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
-          <span>ثبت تجربه</span>
-        </div>
-
-        <div>
-          <Button variant="success">ثبت</Button>{" "}
-          <Button variant="info">پیش نویس</Button>{" "}
-        </div>
-      </div>
-
+      <Hedaer title={"ثبت تجربه"} icon="fa fa-lightbulb-o" />
       <hr />
 
       <Alert variant="info">
@@ -29,12 +19,31 @@ const Experience = () => {
 
       <Input label="عنوان تجربه" require={true} name={"title"} />
 
-      <Input label="خلاصه دانش" require={true} onlyLable={true} />
+      <TextEditor label="خلاصه دانش" require={true} />
 
-      <TextEditor />
-      <Input label="حوضه دانش" require={true}   onlyLable={true} />
+      <Treeview label="حوضه دانش" require={true} />
 
-      <Treeview />
+      <Input label="کلمات کلیدی" require={true} />
+
+      <TextEditor
+        button={{ name: "راهنمای پر کردن", Tooltip: "راهنمای پر کردن" }}
+        label=" رویداد یا مشکل منجر به کسب تجربه"
+        require={true}
+      />
+
+      <TextEditor
+        button={{ name: "راهنمای پر کردن", Tooltip: "راهنمای پر کردن" }}
+        label=" شرح تجربه (نحوه حل مشکل)"
+        require={true}
+      />
+
+      <Row>
+        <Col md={2}>
+          <Button className="attachFile">
+            <i className="fa fa-file-text" aria-hidden="true"></i> پیوست فایل
+          </Button>
+        </Col>
+      </Row>
     </div>
   );
 };

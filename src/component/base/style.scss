@@ -1,0 +1,16 @@
+.my-input {
+  display: flex;
+  align-items: center;
+  .Form-Group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  .btn {
+    float: left;
+    color: black !important;
+  }
+}
