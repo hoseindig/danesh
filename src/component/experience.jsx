@@ -4,12 +4,13 @@ import Input from "./base/input";
 // import KendoEditor from "./kendoEditor/index";3
 // import Tiptap from "./kendoEditor/tiptapTextEditor";
 import TextEditor from "./tinymceTextEditor/index";
+import Treeview from "./treeview";
 const Experience = () => {
   return (
     <div className="experience">
       <div className="header">
         <div>
-          <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+          <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
           <span>ثبت تجربه</span>
         </div>
 
@@ -22,12 +23,18 @@ const Experience = () => {
       <hr />
 
       <Alert variant="info">
-        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
         موارد ستاره دار اجباری میباشد
       </Alert>
 
       <Input label="عنوان تجربه" require={true} name={"title"} />
+
+      <Input label="خلاصه دانش" require={true} onlyLable={true} />
+
       <TextEditor />
+      <Input label="حوضه دانش" require={true}   onlyLable={true} />
+
+      <Treeview />
     </div>
   );
 };

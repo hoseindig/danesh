@@ -1,16 +1,31 @@
-import { Button, Alert, Form } from "react-bootstrap";
+import { Button, Alert, Form, Row } from "react-bootstrap";
 
-const Input = ({ name,label, require }) => {
+const Input = ({ name, label, require, onlyLable, noLabel }) => {
+  const cssclass = !onlyLable ? "mb-3" : "";
   return (
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-      <Form.Label>
-        {label} {require ? <span className="require">*</span> : ""}
-      </Form.Label>
-      <Form.Control type="email" placeholder="" name={name}/>
-      <Form.Text className="text-muted">
-        {/* We'll never share your email with anyone else. */}
-      </Form.Text>
-    </Form.Group>
+    <Row>
+      <Form.Group className={cssclass} controlId="formBasicEmail">
+        {noLabel ? (
+          ""
+        ) : (
+          <Form.Label>
+            {label} {require ? <span className="require">*</span> : ""}
+          </Form.Label>
+        )}
+        {!onlyLable ? (
+          <Form.Control
+            type="email"
+            placeholder={noLabel ? label : ""}
+            name={name}
+          />
+        ) : (
+          ""
+        )}
+        <Form.Text className="text-muted">
+          {/* We'll never share your email with anyone else. */}
+        </Form.Text>
+      </Form.Group>
+    </Row>
   );
 };
 
