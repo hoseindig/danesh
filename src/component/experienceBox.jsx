@@ -32,7 +32,9 @@ class ExperienceBox extends Component {
         handleChange={this.handleChange}
       />
 
-      <TextEditor label="خلاصه دانش" require={true} />
+      <TextEditor label="خلاصه دانش" require={true} name='summaryOfKnowledge'
+        value={data.summaryOfKnowledge}
+        handleChange={this.handleChange} />
 
       <Treeview label="حوضه دانش" require={true} />
 
@@ -43,12 +45,18 @@ class ExperienceBox extends Component {
         button={{ name: "راهنمای پر کردن", Tooltip: "راهنمای پر کردن" }}
         label=" رویداد یا مشکل منجر به کسب تجربه"
         require={true}
+        name='eventOrProblemLeadingToPxperience'
+        value={data.eventOrProblemLeadingToPxperience}
+        handleChange={this.handleChange} 
       />
 
       <TextEditor
         button={{ name: "راهنمای پر کردن", Tooltip: "راهنمای پر کردن" }}
         label=" شرح تجربه (نحوه حل مشکل)"
         require={true}
+        name='DescriptionOfTheExperience'
+        value={data.DescriptionOfTheExperience}
+        handleChange={this.handleChange} 
       />
 
       <Row>
@@ -63,4 +71,3 @@ class ExperienceBox extends Component {
 }
 
 export default ExperienceBox;
- 
