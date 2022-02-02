@@ -12,6 +12,7 @@ class SpecialItemBox extends Component {
     isSpecialKnowledge: false,
     isGroupknowledge: false,
     showModalDanshkar: false,
+    data: {}
   };
   // let isSpecialKnowledge = false;
   specialKnowledge = (p) => {
@@ -30,8 +31,15 @@ class SpecialItemBox extends Component {
     this.setState({ showModalDanshkar });
     console.log("showModalDanshkar", showModalDanshkar);
   };
+  handleChange = ({ currentTarget: input }) => {
+    const data = { ...this.state.data };
+    data[input.name] = input.value;
+    this.setState({ data });
+    console.log("handleChange", input.name,input.value);
+  };
+
   render() {
-    const { isSpecialKnowledge, isGroupknowledge, showModalDanshkar } =
+    const { isSpecialKnowledge, isGroupknowledge, showModalDanshkar, data } =
       this.state;
     return (
       <div className="experience">
@@ -54,13 +62,16 @@ class SpecialItemBox extends Component {
           name={"title"}
           type="checkbox"
           onClick={() => this.specialKnowledge()}
+          handleChange={this.handleChange}
         />
         {isSpecialKnowledge === true ? (
           <Input
             label="  دلایل ویژه بدون دانش خود را ذکر کنید"
             require={true}
-            name={"title"}
             type="textarea"
+            name={"reasons"}
+            value={data.reasons}
+            handleChange={this.handleChange}
           />
         ) : (
           ""
@@ -92,7 +103,11 @@ class SpecialItemBox extends Component {
                 />
               </Col>
               <Col md={3}>
-                <Input label=" درصد مشارکت" require={true} name={"title"} />
+                <Input label=" درصد مشارکت" require={true}  
+                name={"percentageOfParticipation"}
+                value={data.percentageOfParticipation}
+                handleChange={this.handleChange}
+                />
               </Col>
               <Col md={3}>
                 <Button>اضافه به لیست</Button>

@@ -10,12 +10,15 @@ import "./style.scss";
 const Input = ({
   name,
   label,
+  test,
+  value,
   require,
   onlyLable,
   noLabel,
   button,
   type,
   onClick,
+  handleChange,
   optionButton,
   optionClick
 }) => {
@@ -23,13 +26,16 @@ const Input = ({
   const ifButtonExistColIs = button ? 10 : optionButton ? 8 : 12;
   return (
     <Row className="my-input">
+
+      {test}
       <Col md={ifButtonExistColIs}>
         {type && type === "textarea" ? (
           <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
             <Form.Label>
               {label} {require ? <span className="require">*</span> : ""}
             </Form.Label>
-            <Form.Control type="textarea" name={name} />
+            <Form.Control type="textarea" name={name} value={value}
+              onChange={handleChange} />
           </Form.Group>
         ) : (
           ""
@@ -67,6 +73,8 @@ const Input = ({
                 type="email"
                 placeholder={noLabel ? label : ""}
                 name={name}
+                value={value}
+                onChange={handleChange}
               />
             ) : (
               ""
