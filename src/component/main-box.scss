@@ -1,8 +1,13 @@
+body,.App,#root,html{
+  height: 100vh;
+  background-color: #ecf0f8;
+}
 .main-box {
   height: calc(100vh - 110px);
   padding: 50px 10px;
   background-color: #ecf0f8;
 }
+
 
 .menu-right {
   padding: 15px;
