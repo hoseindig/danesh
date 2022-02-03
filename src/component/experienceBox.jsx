@@ -11,7 +11,7 @@ class ExperienceBox extends Component {
   state = { data: {} }
   handleChange = ({ currentTarget: input }) => {
     const data = { ...this.state.data };
-    data[input.name] = input.value;
+    data[input.name] = input.checked ? input.checked : input.value;
     this.setState({ data });
     console.log("handleChange", input.name, input.value);
   };
@@ -36,7 +36,10 @@ class ExperienceBox extends Component {
         value={data.summaryOfKnowledge}
         handleChange={this.handleChange} />
 
-      <Treeview label="حوضه دانش" require={true} />
+      <Treeview label="حوضه دانش" require={true}
+        handleChange={this.handleChange}
+        value={data.knowledgeBasin} name='knowledgeBasin'
+      />
 
       <Input label="کلمات کلیدی" require={true} value={data.keyword} name='keyword'
         handleChange={this.handleChange} />
@@ -47,7 +50,7 @@ class ExperienceBox extends Component {
         require={true}
         name='eventOrProblemLeadingToPxperience'
         value={data.eventOrProblemLeadingToPxperience}
-        handleChange={this.handleChange} 
+        handleChange={this.handleChange}
       />
 
       <TextEditor
@@ -56,7 +59,7 @@ class ExperienceBox extends Component {
         require={true}
         name='DescriptionOfTheExperience'
         value={data.DescriptionOfTheExperience}
-        handleChange={this.handleChange} 
+        handleChange={this.handleChange}
       />
 
       <Row>
