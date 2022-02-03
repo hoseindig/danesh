@@ -43,7 +43,9 @@ const Input = ({
 
         {type && type === "checkbox" ? (
           <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
-            <Form.Check onClick={onClick} type="checkbox" label={label} />
+            <Form.Check onClick={onClick} type="checkbox" label={label} name={name}
+              value={value}
+              onChange={handleChange} />
           </Form.Group>
         ) : (
           ""
