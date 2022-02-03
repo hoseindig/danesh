@@ -33,9 +33,10 @@ class SpecialItemBox extends Component {
   };
   handleChange = ({ currentTarget: input }) => {
     const data = { ...this.state.data };
-    data[input.name] = input.value;
+    data[input.name] = input.hasOwnProperty('checked') ? input.checked : input.value;
     this.setState({ data });
-    console.log("handleChange", input.name,input.value);
+    console.log("handleChange", input.name, input.value);
+    debugger
   };
 
   render() {
@@ -59,7 +60,8 @@ class SpecialItemBox extends Component {
         <Input
           label="آیا دانش شما ویژه است ؟"
           require={true}
-          name={"title"}
+          name={"isSpecial"}
+          value={data.isSpecial}
           type="checkbox"
           onClick={() => this.specialKnowledge()}
           handleChange={this.handleChange}
@@ -80,8 +82,10 @@ class SpecialItemBox extends Component {
         <Input
           label="آیا دانش شما گروهی است ؟"
           require={true}
-          name={"title"}
+          name={"isGroup"}
+          value={data.isGroup}
           type="checkbox"
+          handleChange={this.handleChange}
           onClick={() => this.groupKnowledge()}
         />
 
@@ -103,10 +107,10 @@ class SpecialItemBox extends Component {
                 />
               </Col>
               <Col md={3}>
-                <Input label=" درصد مشارکت" require={true}  
-                name={"percentageOfParticipation"}
-                value={data.percentageOfParticipation}
-                handleChange={this.handleChange}
+                <Input label=" درصد مشارکت" require={true}
+                  name={"percentageOfParticipation"}
+                  value={data.percentageOfParticipation}
+                  handleChange={this.handleChange}
                 />
               </Col>
               <Col md={3}>
