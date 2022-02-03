@@ -12,6 +12,7 @@ const Input = ({
   label,
   test,
   value,
+  pattern,
   require,
   onlyLable,
   noLabel,
@@ -28,6 +29,8 @@ const Input = ({
     <Row className="my-input">
 
       {test}
+      {/* {onlyLable ? "onlyLable "+onlyLable.toString() : ''}
+      {noLabel ? "noLabel "+noLabel.toString() : ''} */}
       <Col md={ifButtonExistColIs}>
         {type && type === "textarea" ? (
           <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
@@ -41,11 +44,25 @@ const Input = ({
           ""
         )}
 
+
         {type && type === "checkbox" ? (
           <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
             <Form.Check onClick={onClick} type="checkbox" label={label} name={name}
               value={value}
               onChange={handleChange} />
+          </Form.Group>
+        ) : (
+          ""
+        )}
+
+        {/* other type input */}
+        {type && !onlyLable && type !== "checkbox" ? (
+          <Form.Group className="mb-3 col-md-12" controlId="formBasicCheckbox">
+            <Form.Label>
+              {label} {require ? <span className="require">*</span> : ""}
+            </Form.Label>
+            <Form.Control type={type} name={name} value={value}
+              onChange={handleChange} pattern={pattern}/>
           </Form.Group>
         ) : (
           ""
@@ -91,8 +108,9 @@ const Input = ({
         )}
       </Col>
 
-      <Col md={2}>
-        {button ? (
+      {button ? (
+        <Col md={2}>
+
           <OverlayTrigger
             placement={"top"}
             overlay={<Tooltip id={`tooltip-top`}>{button.Tooltip}</Tooltip>}
@@ -101,14 +119,15 @@ const Input = ({
               {button.name}
             </Button>
           </OverlayTrigger>
-        ) : (
-          ""
-        )}
-      </Col>
+
+        </Col>
+      ) : (
+        ""
+      )}
 
       <Col md={2}>
         {optionButton ? (
-          <Button variant="light" className="mb-2" onClick={optionClick}>
+          <Button variant="light" className="" onClick={optionClick}>
             {optionButton.name}
           </Button>
         ) : (
