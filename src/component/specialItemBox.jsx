@@ -36,7 +36,6 @@ class SpecialItemBox extends Component {
     data[input.name] = input.hasOwnProperty('checked') ? input.checked : input.value;
     this.setState({ data });
     console.log("handleChange", input.name, input.value);
-    debugger
   };
 
   render() {
