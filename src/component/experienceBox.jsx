@@ -15,14 +15,24 @@ class ExperienceBox extends Component {
 
     data[input.name] = input.hasOwnProperty('checked') ? input.checked : input.value;
     this.setState({ data });
-    handleFormChangeData({ExperienceBox:data})
+    handleFormChangeData({ ExperienceBox: data })
 
     console.log("handleChange", input.name, input.value);
   };
   render() {
     const { data } = this.state
+    const { handleSaveForm }=this.props
     return (<div className="experience">
-      <Header title={"ثبت تجربه"} icon="fa fa-lightbulb-o" />
+
+      <Row className="header-box py-10">
+        <Col md={9}>
+          <Header title={"ثبت تجربه"} icon="fa fa-lightbulb-o" />
+        </Col>
+        <Col md={3}>
+          <Button variant="primary" onClick={handleSaveForm}>ثبت</Button>
+          <Button variant="success" >پیش نویس</Button>
+        </Col>
+      </Row>
       <hr />
 
       <AlertBox
