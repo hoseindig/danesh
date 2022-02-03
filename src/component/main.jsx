@@ -6,6 +6,8 @@ import { Card, Row, Col, Accordion, ListGroup } from "react-bootstrap";
 
 import CenterMainPage from "./centerMainPage";
 import Experience from "./experience";
+import ExperienceHistory from "./experienceHistory";
+
 class Main extends Component {
   state = {};
   render() {
@@ -54,7 +56,7 @@ class Main extends Component {
           <Col md={9}>
             <Switch>
               <Route path="/experience" component={Experience} />
-
+              <Route path="/experienceHistory" component={ExperienceHistory} />
               <Route
                 path="/"
                 render={(props) => <CenterMainPage {...props} cards={cards} />}

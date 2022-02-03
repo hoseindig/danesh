@@ -1,28 +1,29 @@
 import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { DataGrid, faIR } from '@mui/x-data-grid';
-
-// const columns = [
-//     { field: 'id', headerName: 'ID', width: 70 },
-//     { field: 'firstName', headerName: 'نام', width: 130 },
-//     { field: 'lastName', headerName: 'نام فامیل', width: 130 },
-//     {
-//         field: 'age',
-//         headerName: 'سن',
-//         type: 'number',
-//         width: 90,
-//     },
-//     {
-//         field: 'fullName',
-//         headerName: 'نام و نام خانوادگی',
-//         description: 'This column has a value getter and is not sortable.',
-//         sortable: false,
-//         width: 160,
-//         valueGetter: (params) =>
-//             `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''
-//             }`,
-//     },
-// ];
+/*
+const columns = [
+    { field: 'id', headerName: 'ID', width: 70 },
+    { field: 'firstName', headerName: 'نام', width: 130 },
+    { field: 'lastName', headerName: 'نام فامیل', width: 130 },
+    {
+        field: 'age',
+        headerName: 'سن',
+        type: 'number',
+        width: 90,
+    },
+    {
+        field: 'fullName',
+        headerName: 'نام و نام خانوادگی',
+        description: 'This column has a value getter and is not sortable.',
+        sortable: false,
+        width: 160,
+        valueGetter: (params) =>
+            `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''
+            }`,
+    },
+];
+*/
 
 // const rows = [
 //     { id: 1, lastName: 'پیوندی  ', firstName: 'حسین', age: 35 },

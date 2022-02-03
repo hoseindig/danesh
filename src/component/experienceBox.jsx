@@ -11,8 +11,12 @@ class ExperienceBox extends Component {
   state = { data: {} }
   handleChange = ({ currentTarget: input }) => {
     const data = { ...this.state.data };
+    const { name, handleFormChangeData } = this.props
+
     data[input.name] = input.hasOwnProperty('checked') ? input.checked : input.value;
     this.setState({ data });
+    handleFormChangeData({ExperienceBox:data})
+
     console.log("handleChange", input.name, input.value);
   };
   render() {

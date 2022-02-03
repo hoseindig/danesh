@@ -39,8 +39,10 @@ class SpecialItemBox extends Component {
   };
   handleChange = ({ currentTarget: input }) => {
     const data = { ...this.state.data };
+    const { name, handleFormChangeData } = this.props
     data[input.name] = input.hasOwnProperty('checked') ? input.checked : input.value;
     this.setState({ data });
+    handleFormChangeData({ SpecialItemBox: data })
     console.log("handleChange", input.name, input.value);
   };
 
@@ -74,6 +76,7 @@ class SpecialItemBox extends Component {
   render() {
     const { isSpecialKnowledge, isGroupknowledge, showModalDanshkar, data, newDaneshkar } =
       this.state;
+    const { handleSaveForm } = this.props
     return (
       <div className="experience">
         <ModalDanshkar
@@ -188,7 +191,7 @@ class SpecialItemBox extends Component {
         <Row className="footer-box py-10">
           <Col md={9}></Col>
           <Col md={3}>
-            <Button variant="primary">ثبت</Button>
+            <Button variant="primary" onClick={handleSaveForm}>ثبت</Button>
             <Button variant="success" >پیش نویس</Button>
           </Col>
         </Row>

@@ -38,6 +38,11 @@ export class Example1 extends Component {
       { id: 6, headerText: "انجمن گفتگوی سوال" },
       { id: 7, headerText: "ارتباط با دیگران" },
       { id: 8, headerText: "گزارشات" },
+      {
+        id: 9, headerText: "سوابق ثبت", child: [
+          { id: 0, name: "سوابق ثبت تجریه", icon: "", path: "/experienceHistory" },
+        ]
+      },
     ];
     return (
       <div>
