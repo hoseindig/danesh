@@ -7,7 +7,7 @@
   font-family: IranianSans;
   font-size: 1em;
 }
-body{
+body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -160,6 +160,7 @@ body {
   .header {
     div i {
       padding: 10px;
+      font-size: 2em;
     }
     display: flex;
     align-content: center;
@@ -190,6 +191,11 @@ body {
   .attachFile {
     float: right;
   }
+  .header-box {
+    padding: 10px 0;
+    // background-color: #f0f3ee;
+    text-align: left;
+  }
   .footer-box {
     padding: 10px 0;
     background-color: #f0f3ee;
@@ -210,11 +216,34 @@ body {
   }
 }
 
-.modal,.modal-header {
+.modal,
+.modal-header {
   direction: rtl;
 }
 
-
-.tox-notifications-container{
+.tox-notifications-container {
   display: none;
+}
+
+.card-news {
+  .list-group-item{
+    display: flex;
+    align-content: stretch;
+    align-items: baseline;
+  }
+  .fa-circle:before {
+    color: #d7d3d3;
+  }
+  i{
+    margin: 0 4px;
+  }
+
+  span {
+    font-size: 0.7em;
+    // display: inline-block;
+    // width: 180px;
+    // white-space: nowrap;
+    // overflow: hidden !important;
+    // text-overflow: ellipsis;
+  }
 }
