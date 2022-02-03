@@ -53,16 +53,19 @@ class SpecialItemBox extends Component {
   }
 
   handleAddNewRowDaneshkar = () => {
-    let { newDaneshkar,  data } = this.state
+    let { newDaneshkar, data } = this.state
 
+    let index = newDaneshkar.rows.find(i => i.id === data.userListSelected[0].id)
+    if (index)
+      return
     let row = {
-      id:data.userListSelected[0].id,
+      id: data.userListSelected[0].id,
       firstName: data.userListSelected[0].firstName,
       lastName: data.userListSelected[0].lastName,
       percentageOfParticipation: data.percentageOfParticipation,
       organization: data.userListSelected[0].firstName + " " + data.userListSelected[0].lastName
     }
-    newDaneshkar.rows=[...newDaneshkar.rows,row]//.push(row)
+    newDaneshkar.rows = [...newDaneshkar.rows, row]//.push(row)
     debugger
 
     this.setState({ newDaneshkar })
