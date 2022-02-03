@@ -4,7 +4,6 @@ import Input from "../base/input";
 
 const TextEditor = ({ button, label, require, handleChange, value, name }) => {
   function handleEditorChange(content, editor) {
-    debugger
     // const { handleChange, name } = this.props;
     const currentTarget = {
       value: content,
@@ -29,6 +28,7 @@ const TextEditor = ({ button, label, require, handleChange, value, name }) => {
       init={{
         height: 500,
         menubar: false,
+        directionality : 'rtl'
       }}
       onEditorChange={handleEditorChange}
     />
