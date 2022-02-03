@@ -6,13 +6,19 @@ import Header from "./header-box";
 import AlertBox from "./alertBox";
 import React, { Component } from "react";
 import ModalDanshkar from "./base/modalDanshkar";
+import NewDaneshKar from "./newDanshKar";
 import Text from "./base/text";
 class SpecialItemBox extends Component {
   state = {
     isSpecialKnowledge: false,
     isGroupknowledge: false,
     showModalDanshkar: false,
-    data: {}
+    data: {},
+    newDaneshkar: {
+      rows: [
+        { id: 1, lastName: 'ادمین  ', firstName: 'سیستم', organization: "وزارت بهداشت", percentageOfParticipation: 100 },
+      ]
+    }
   };
   // let isSpecialKnowledge = false;
   specialKnowledge = (p) => {
@@ -38,14 +44,41 @@ class SpecialItemBox extends Component {
     console.log("handleChange", input.name, input.value);
   };
 
+  handleAddUserSelected = () => {
+    let { data } = this.state
+    // daneshkar
+    data.daneshkar = data.userListSelected[0].firstName + " " + data.userListSelected[0].lastName
+    // log
+    this.setState({ showModalDanshkar: false, data: { ...data, daneshkar: data.daneshkar } });
+  }
+
+  handleAddNewRowDaneshkar = () => {
+    let { newDaneshkar,  data } = this.state
+
+    let row = {
+      id:data.userListSelected[0].id,
+      firstName: data.userListSelected[0].firstName,
+      lastName: data.userListSelected[0].lastName,
+      percentageOfParticipation: data.percentageOfParticipation,
+      organization: data.userListSelected[0].firstName + " " + data.userListSelected[0].lastName
+    }
+    newDaneshkar.rows=[...newDaneshkar.rows,row]//.push(row)
+    debugger
+
+    this.setState({ newDaneshkar })
+    // newDaneshkar.rows
+  }
   render() {
-    const { isSpecialKnowledge, isGroupknowledge, showModalDanshkar, data } =
+    const { isSpecialKnowledge, isGroupknowledge, showModalDanshkar, data, newDaneshkar } =
       this.state;
     return (
       <div className="experience">
         <ModalDanshkar
           show={showModalDanshkar}
           toggleModal={this.showDanshModal}
+          handleChange={this.handleChange}
+          name={'userListSelected'}
+          handleAddUserSelected={this.handleAddUserSelected}
         />
         <Header title={"موارد خاص"} icon="fa fa-file-text-o" />
         <hr />
@@ -100,9 +133,12 @@ class SpecialItemBox extends Component {
                 <Input
                   label=" دانشکار"
                   require={true}
-                  name={"title"}
+                  name={"daneshkar"}
                   optionButton={{ name: "..." }}
                   optionClick={this.showDanshModal}
+                  onClick={this.showDanshModal}
+                  value={data.daneshkar}
+                // handleChange={this.handleChange}
                 />
               </Col>
               <Col md={3}>
@@ -110,15 +146,18 @@ class SpecialItemBox extends Component {
                   name={"percentageOfParticipation"}
                   value={data.percentageOfParticipation}
                   handleChange={this.handleChange}
+                  type='number'
+                  pattern="^\d*(\.\d{0,2})?$"
                 />
               </Col>
               <Col md={3}>
-                <Button>اضافه به لیست</Button>
+                <Button onClick={this.handleAddNewRowDaneshkar}>اضافه به لیست</Button>
               </Col>
             </Row>
             <Row>
               <Col md={12}>
-                <Table striped bordered hover>
+                <NewDaneshKar rows={newDaneshkar.rows} />
+                {/* <Table striped bordered hover>
                   <thead>
                     <tr>
                       <th>نام</th>
@@ -135,7 +174,7 @@ class SpecialItemBox extends Component {
                       <td>1000</td>
                     </tr>
                   </tbody>
-                </Table>
+                </Table> */}
               </Col>
             </Row>
           </div>
@@ -147,7 +186,7 @@ class SpecialItemBox extends Component {
           <Col md={9}></Col>
           <Col md={3}>
             <Button variant="primary">ثبت</Button>
-            <Button variant="success">پیش نویس</Button>
+            <Button variant="success" >پیش نویس</Button>
           </Col>
         </Row>
       </div>
