@@ -10,13 +10,14 @@ import { Row, Col } from "react-bootstrap";
 class Header extends Component {
   state = {};
   render() {
+    const {text}=this.props
     return (
       <div className="top-header">
         <Row>
           <Col md={3}>
             <div className="header-box-r">
               <img width={90} src={logo} alt="" />
-              <span>وزارت بهداشت درمان و آموزش پزشکی</span>
+              <span>{text}</span>
             </div>
           </Col>
           <Col md={9}>

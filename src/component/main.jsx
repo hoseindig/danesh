@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import RightMenu from "./rightMenu";
 import "./main-box.scss";
-import { Card, Row, Col, Accordion, ListGroup } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import CenterMainPage from "./centerMainPage";
 import Experience from "./experience";
 import ExperienceHistory from "./experienceHistory";
+import Header from "./header";
 
 class Main extends Component {
   state = {};
@@ -45,9 +46,16 @@ class Main extends Component {
         number: 2,
       },
     ];
+    const { textConfig } = this.props;
     return (
       <div className="main-box">
         <Row>
+          <Col md={12}>
+            <Header text={textConfig.header} />
+          </Col>
+        </Row>
+
+        <Row className="down-box">
           <Col md={3}>
             <div className="  menu-right">
               <RightMenu />
@@ -55,7 +63,8 @@ class Main extends Component {
           </Col>
           <Col md={9}>
             <Switch>
-              <Route path="/experience" component={Experience} />
+              {/* <Route path='/login' component={LoginForm} /> */}
+              <Route path="/main/experience" component={Experience} />
               <Route path="/experienceHistory" component={ExperienceHistory} />
               <Route
                 path="/"

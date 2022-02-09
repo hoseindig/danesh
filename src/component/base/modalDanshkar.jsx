@@ -1,7 +1,7 @@
 import { Button, Modal, Row, Col } from "react-bootstrap";
 import SearchInput from "../search";
 import Table from './table'
-
+import { Link } from "react-router-dom";
 const ModalDanshkar = ({ show, toggleModal, handleChange, handleAddUserSelected, name }) => {
   console.log("showModal", show);
   const columns = [

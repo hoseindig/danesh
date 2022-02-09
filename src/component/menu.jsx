@@ -13,7 +13,7 @@ export class Example1 extends Component {
         id: 1,
         headerText: "ثبت",
         child: [
-          { id: 0, name: "تجربه", icon: "", path: "/experience" },
+          { id: 0, name: "تجربه", icon: "", path: "/main/experience" },
           { id: 1, path: "", name: "ثبت سوال", icon: "fa fa-question-circle" },
           { id: 2, path: "", name: "ثبت مستند", icon: "fa fa-file-text-o" },
           {
