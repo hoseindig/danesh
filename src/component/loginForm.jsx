@@ -12,6 +12,9 @@ const Login = () => {
             <div className="col-lg-6">
               <div className="card2 card border-0 px-4 py-5">
                 <div className="row px-3">
+                  <h4>ورود به سامانه</h4>
+                </div>
+                <div className="row px-3">
                   <label className="mb-1">
                     <h6 className="mb-0 text-sm">نام کاربری</h6>
                   </label>
