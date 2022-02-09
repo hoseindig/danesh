@@ -40,7 +40,7 @@ export class Example1 extends Component {
       { id: 8, headerText: "گزارشات" },
       {
         id: 9, headerText: "سوابق ثبت", child: [
-          { id: 0, name: "سوابق ثبت تجریه", icon: "", path: "/experienceHistory" },
+          { id: 0, name: "سوابق ثبت تجریه", icon: "", path: "/main/experienceHistory" },
         ]
       },
     ];

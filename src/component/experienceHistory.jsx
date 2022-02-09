@@ -1,5 +1,5 @@
 import Table from './base/table'
-
+import Header from './header-box';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -13,6 +13,7 @@ const columns = [
             </strong>
         ),
     },
+
     {
         field: 'isSpecial', headerName: 'دانش  ویژه ', width: 160,
         renderCell: (params) => (
@@ -21,6 +22,8 @@ const columns = [
             </strong>
         ),
     },
+    { field: 'dateTime', headerName: 'زمان ثبت', width: 170 },
+
 
 ];
 let rows = []
@@ -47,6 +50,7 @@ getSaveData()
 const ExperienceHistory = () => {
     return (
         <div className="experience">
+            <Header title={"سوابق ثبت شده"} icon="fa fa-lightbulb-o" />
             <Table rows={rows} columns={columns} />
         </div >
     );

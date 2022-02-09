@@ -7,7 +7,8 @@
 // }
 .login-box {
   .box-login {
-    min-height: 80vh;
+    // min-height: 80vh;
+    height: calc(100vh - 200px);
   }
   .card0 {
     box-shadow: 0px 4px 20px 4px #ede0e0;

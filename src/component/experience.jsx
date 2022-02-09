@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { toast } from "react-toastify";
+import * as moment from 'jalali-moment';
 
 import ExperienceBox from "./experienceBox";
 import SpecialItemBox from "./specialItemBox";
@@ -14,12 +15,14 @@ class Experience extends Component {
 
     debugger
     const { SpecialItemBox, ExperienceBox } = this.state
+    let todayJalali = moment().locale('fa').format('YYYY/MM/DD hh:mm:ss  ');
 
     let formdata = JSON.parse(localStorage.getItem("formdata"));
     formdata =formdata ? formdata : []
     const data = {
       SpecialItemBox,
-      ExperienceBox
+      ExperienceBox,
+      dateTime:todayJalali
     }
     formdata.push(data)
     const dataText = JSON.stringify(formdata)

@@ -65,7 +65,7 @@ class Main extends Component {
             <Switch>
               {/* <Route path='/login' component={LoginForm} /> */}
               <Route path="/main/experience" component={Experience} />
-              <Route path="/experienceHistory" component={ExperienceHistory} />
+              <Route path="/main/experienceHistory" component={ExperienceHistory} />
               <Route
                 path="/"
                 render={(props) => <CenterMainPage {...props} cards={cards} />}
