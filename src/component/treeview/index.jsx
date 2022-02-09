@@ -2,6 +2,9 @@
 // import "node_modules/react-checkbox-tree/src/less/react-checkbox-tree.less";
 // import "node_modules/react-checkbox-tree/src/scss/react-checkbox-tree.scss";
 // https://github.com/jakezatecky/react-checkbox-tree
+
+import Tree from './antdTree'
+
 import "react-checkbox-tree/lib/react-checkbox-tree.css";
 import "./style.scss";
 import { Row, Col, Button } from "react-bootstrap";
@@ -30,11 +33,11 @@ class Treeview extends Component {
   render() {
     const nodes = [
       {
-        value: "mars",
-        label: "فیلد های حوضه سلامت",
+        key: "mars",
+        title: "فیلد های حوضه سلامت",
         children: [
-          { value: "phobos", label: "بهداشت درمان" },
-          { value: "deimos", label: "آموزش" },
+          { key: "phobos", title: "بهداشت درمان" },
+          { key: "deimos", title: "آموزش", children: [{ key: "phobos", title: "بهداشت درمان" },{ key: "phobos1", title: "بهداشت درمان" },] },
         ],
       },
     ];
@@ -57,13 +60,17 @@ class Treeview extends Component {
           </Row>
 
           <Row className="m-0 pt-2 pr-0">
-            <CheckboxTree
+
+            {/* <CheckboxTree
               nodes={nodes}
               checked={this.state.checked}
               expanded={this.state.expanded}
               onCheck={(checked) => this.handleChangeTree("checked", checked)}
               onExpand={(expanded) => this.handleChangeTree("expanded", expanded)}
             />
+             */}
+
+            <Tree nodes={nodes} />
           </Row>
         </Row>
       </div>
